@@ -1,0 +1,91 @@
+Task — AI-Powered Medical Chatbot
+Objective
+Build an AI-powered conversational chatbot for a hospital group that accepts patient-reported symptoms in natural language (Arabic or English), provides medical recommendations, and guides the user toward booking an appointment with the right doctor at the right branch.
+Background
+The chatbot represents a hospital group and must be aware of its identity — including its branches, medical specializations, and doctors. Every medical interaction should feel like talking to an informed assistant who knows the hospital group well and can naturally connect the patient to the right care pathway.
+Functional Requirements
+1. Context-Aware Medical Conversation
+The chatbot must maintain context across the conversation so the user can ask follow-up questions naturally, without repeating themselves.
+The chatbot must understand Arabic and English input.
+2. Medical Symptom Assessment
+The chatbot accepts a patient's description of symptoms or a light medical condition.
+It provides a clear, empathetic medical recommendation in the same language the user is speaking.
+After every medical recommendation, the chatbot should naturally suggest that the user book an appointment at the hospital.
+3. Hospital Knowledge Base Integration
+The chatbot's medical responses must be grounded in the hospital group's own medical dataset, not purely general knowledge.
+The system must retrieve relevant content from that dataset and use it when formulating a response.
+4. Recognizing User Actions vs. Medical Questions
+The chatbot handles two fundamentally different types of user input and must respond differently to each:
+Medical questions — the user describes symptoms or asks about a condition. The chatbot responds with a conversational medical recommendation in text.
+Action requests — the user wants to do something: book an appointment, find a doctor, view a branch, etc. For these, the chatbot must return structured data containing everything needed to fulfill that action (for example, the doctor's name, specialty, and branch when the user wants to book). A plain text answer is not sufficient here.
+These two response types are distinct — a response should be one or the other, not a mix of both.
+5. Hospital Data Lookup
+The system must be able to answer questions about:
+Available hospital branches
+Medical specializations offered at each branch
+Doctors working at the hospital — including their name and specialty
+6. Booking Flow
+When a user expresses intent to book an appointment, the system must identify the relevant doctor, medical specialization, and hospital branch from the conversation.
+The system should attempt to match these against the hospital's actual data to return verified, structured booking information.
+The structured response must contain enough information for the booking system to proceed (doctor name, specialty, branch and hospital identifiers).
+7. Voice Input [Optional]
+The system must support audio input by providing a way to transcribe spoken Arabic or English into text, which is then processed as a regular chat message.
+Test Data
+The hospital group's data (branches, specializations, and doctors) does not need to come from a real source. You are encouraged to generate realistic test data using AI — invent a hospital group name, create a set of branches, populate each branch with plausible specializations and doctor profiles, and use this data to demonstrate all chatbot capabilities end to end.
+Response Samples
+The following examples illustrate the expected behavior and output shape. Field names and action identifiers are for illustration — you may name them as you see fit.
+Medical Question
+User: "I've been having a severe headache and fever for two days, what should I do?"  (spoken Arabic)
+Chatbot response:
+{
+  "answer": "الصداع الشديد المصحوب بالحمى لمدة تزيد عن 24 ساعة قد يشير إلى التهاب أو عدوى تستوجب الفحص الطبي. يُنصح بالراحة التامة وشرب كميات كافية من الماء وتجنب التعرض للضوء الساطع. إذا استمرت الأعراض أو تفاقمت، فمن المهم مراجعة طبيب متخصص في أقرب وقت. هل تودّ حجز موعد مع أحد أطبائنا؟"
+}
+Booking Appointment
+User: "Yes, I want to book with Dr. Sarah in Neurology at the Cairo branch"
+Chatbot response:
+{
+  "action": "<booking action identifier>",
+  "doctor_name": "Dr. Sarah Hassan",
+  "specialty": "Neurology",
+  "branch": "Cairo",
+  "hospital": "Al Raya Medical Group - Cairo Branch"
+}
+Listing Doctors
+User: "Who are the cardiologists at the Riyadh branch?"
+Chatbot response:
+{
+  "action": "<list doctors action identifier>",
+  "specialty": "Cardiology",
+  "branch": "Riyadh",
+  "doctors": [
+    { "name": "Dr. Khalid Al-Mansouri", "specialty": "Cardiology" },
+    { "name": "Dr. Layla Nasser", "specialty": "Cardiology" }
+  ]
+}
+Listing Specializations
+User: "What specializations are available at the Alexandria branch?"
+Chatbot response:
+{
+  "action": "<list specializations action identifier>",
+  "branch": "Alexandria",
+  "specializations": ["Cardiology", "Neurology", "Orthopedics", "Dermatology"]
+}
+Voice Input
+Request: Audio file upload (spoken Arabic)
+Response:
+{
+  "transcribed_text": "عندي ألم في الصدر من الصباح وأحس بضيق في التنفس"
+}
+The transcribed text is then sent to the chat as a regular message.
+Deliverables
+Full source code
+A short README covering:
+Your overall approach and system design
+The AI model(s) used and why
+Your prompt design strategy
+How to configure and run the project
+The generated hospital test dataset
+Example conversations demonstrating:
+A multi-turn medical conversation ending in a booking suggestion
+A user asking about available doctors or specializations
+A voice input being transcribed and processed

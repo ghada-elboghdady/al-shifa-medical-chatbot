@@ -4,6 +4,15 @@
 
 ---
 
+## 🎥 Project Demo Video
+
+<video src="demo.mp4" controls="controls" style="max-width: 100%; border-radius: 8px;"></video>
+
+> 💡 *If the video player does not load automatically on your browser, you can view or download [demo.mp4](demo.mp4) directly.*
+
+---
+
+
 ## System Design & Architecture
 
 ```

@@ -4,13 +4,14 @@
 
 ---
 
-## 🎥 Project Demo Video
+## 🎥 Project Demo
 
-<video src="demo.mp4" controls="controls" style="max-width: 100%; border-radius: 8px;"></video>
+[![Watch Demo Video](https://img.shields.io/badge/▶️_Watch_Demo_Video-demo.mp4-blue?style=for-the-badge&logo=playstation)](demo.mp4)
 
-> 💡 *If the video player does not load automatically on your browser, you can view or download [demo.mp4](demo.mp4) directly.*
+> 🎬 **[Click here to view / play the demo video (demo.mp4)](https://github.com/ghada-elboghdady/al-shifa-medical-chatbot/raw/main/demo.mp4)**
 
 ---
+
 
 
 ## System Design & Architecture

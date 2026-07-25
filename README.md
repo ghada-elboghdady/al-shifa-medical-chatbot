@@ -6,13 +6,11 @@
 
 ## 🎥 Project Demo Video
 
-[![Watch Demo](https://img.shields.io/badge/▶️_Watch_Demo_Video-demo.mp4-blue?style=for-the-badge&logo=playstation)](./demo.mp4)
+<video src="demo.mp4" controls="controls" style="max-width: 100%; border-radius: 8px;"></video>
 
-> 🎬 **[Click here to watch or download demo.mp4](./demo.mp4)**  
-> *(Demonstrates bilingual chat, voice input, RAG medical context retrieval, and appointment booking cards)*
+> 💡 *If the video player does not load automatically on your browser, you can view or download [demo.mp4](demo.mp4) directly.*
 
 ---
-
 
 
 ## System Design & Architecture

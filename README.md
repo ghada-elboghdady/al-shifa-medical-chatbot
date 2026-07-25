@@ -6,11 +6,10 @@
 
 ## 🎥 Project Demo
 
-[![Watch Demo Video](https://img.shields.io/badge/▶️_Watch_Demo_Video-demo.mp4-blue?style=for-the-badge&logo=playstation)](demo.mp4)
-
-> 🎬 **[Click here to view / play the demo video (demo.mp4)](https://github.com/ghada-elboghdady/al-shifa-medical-chatbot/raw/main/demo.mp4)**
+![Al Shifa AI Medical Chatbot Demo](demo.gif)
 
 ---
+
 
 
 
